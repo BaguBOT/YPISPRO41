@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+        x:Class="YPISPRO41.Financial_Accounting"
+        Title="Financial_Accounting">
+        <Grid Background="LightGreen">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro">
+                        <DataGrid x:Name="FinancialAccountingDataGrid" 
+                                  HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="False"
+                                  x:CompileBindings="False"
+                                  GridLinesVisibility="All"
+                                  BorderThickness="1"
+                                  BorderBrush="Black"
+                                  Height="170"
+                                  Margin="0,20">
+                                <DataGrid.Columns>
+                                        <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                                        <DataGridTextColumn Header="Клиент" Binding="{Binding client}"/>
+                                        <DataGridTextColumn Header="Курс" Binding="{Binding course}"/>
+                                        <DataGridTextColumn Header="Статус оплаты" Binding="{Binding status}"/>
+                                        <DataGridTextColumn Header="Сумма" Binding="{Binding Sum}"/>
+                                        <DataGridTextColumn Header="Дата" Binding="{Binding data}"/>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBox x:Name="IDBox" Width="50" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="ClientBox" Width="50" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="WellBox" Width="50" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="PaymentBox" Width="100" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="SumBox" Width="50" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="DataBox" Width="50" Height="1"/>
+                        </StackPanel>  
+                        <StackPanel  Orientation = "Horizontal">
+                                        <TextBlock TextAlignment="Center">ㅤㅤㅤIDㅤㅤㅤ</TextBlock>
+                                        <TextBlock TextAlignment="Center">Клиентㅤㅤ</TextBlock>
+                                        <TextBlock TextAlignment="Center">ㅤКурсㅤ</TextBlock>
+                                        <TextBlock TextAlignment="Center">ㅤСтатус оплаты</TextBlock>
+                                        <TextBlock TextAlignment="Center">ㅤСумма</TextBlock>
+                                        <TextBlock TextAlignment="Center">ㅤㅤㅤДата</TextBlock>
+                        </StackPanel>  
+                        <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">   
+                                <Button x:Name="addButton" HorizontalAlignment="Center" Content="ДобавитьЗапись" Click="AddButton_OnClick"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить Запись" Click="DelButton_OnClick"/>
+                                </StackPanel>  
+                        </StackPanel>     
+              
+        </Grid>
+</Window>

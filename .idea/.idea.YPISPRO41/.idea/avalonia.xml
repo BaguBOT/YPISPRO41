@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="YPISPRO41/App.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Attendance accounting.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Attendance_accounting.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/ChartCanvas.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Course_management.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Financial_Accounting.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/MainWindow.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Regis.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Report.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Viewport3D.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Window1.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Window2.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Window3.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Window4.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/attendance_accontig.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/menu.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/1.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/CourseAndGroop.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/CourseAndGroup.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Course_management.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Financial_Accounting.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Group.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Groupsel.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Past_experience.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Regis.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Report.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/Schedule.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/attendance_accontig.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/modul/schedule.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/xml/ChartCanvas.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/xml/Report.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Модули/Course_management.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Модули/Financial_Accounting.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Модули/Regis.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+        <entry key="YPISPRO41/Модули/attendance_accontig.axaml" value="YPISPRO41/YPISPRO41.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

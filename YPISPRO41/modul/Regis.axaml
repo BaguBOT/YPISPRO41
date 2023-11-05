@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="350"
+        x:Class="YPISPRO41.Regis"
+        Title="Regis">
+        
+        <Grid Background="LightGreen">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro">
+                        <DataGrid x:Name="RegisDataGrid" 
+                                  HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="False"
+                                  x:CompileBindings="False"
+                                  GridLinesVisibility="All"
+                                  BorderThickness="1"
+                                  BorderBrush="Black"
+                                  Height="200"
+                                  Margin="0,10">
+                                <DataGrid.Columns>
+                                        <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                                        <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
+                                        <DataGridTextColumn Header="Дата Рождения" Binding="{Binding data}"/>
+                                        <DataGridTextColumn Header="Контактные Данные" Binding="{Binding contakct}"/>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel  Orientation = "Horizontal" >
+                                <TextBox x:Name="IdBox" Width="30" Height="1"/>
+                                 <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="FioBox" Width="200" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="DatabBox" Width="120" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                               <TextBox x:Name="ContakctNumBox" Width="150" Height="1"/>
+                        </StackPanel>
+                        <StackPanel  Orientation = "Horizontal" >
+                                <TextBlock TextAlignment="Center">ㅤㅤIDㅤ </TextBlock>
+                                <TextBlock TextAlignment="Center">ㅤㅤㅤㅤㅤㅤㅤㅤФИОㅤㅤㅤ</TextBlock>
+                                <TextBlock TextAlignment="Center">ㅤㅤㅤㅤДата Рожденияㅤ</TextBlock>
+                                <TextBlock TextAlignment="Center">ㅤКонтактные данныеㅤ</TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" >
+                        <Button x:Name="AddButton" HorizontalAlignment="Center"  Content="Добавить запись" Click="AddButton_OnClick"/>
+                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                        <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить запись" Click="DelButton_OnClick"/>
+                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                        <Button x:Name="Schedule" HorizontalAlignment="Center" Content="Опыт прошлых языков" Click="Schedule_OnClick"/>
+                        </StackPanel>    
+                </StackPanel>
+                
+        </Grid>
+</Window>

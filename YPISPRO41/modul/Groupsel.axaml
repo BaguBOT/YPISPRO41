@@ -1,0 +1,46 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        x:Class="YPISPRO41.modul.Groupsel"
+        Title="Groupsel">
+   <Grid Background="LightGreen">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro">
+                        <DataGrid x:Name="GroupDataGrid" 
+                                  HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="False"
+                                  x:CompileBindings="False"
+                                  GridLinesVisibility="All"
+                                  BorderThickness="1"
+                                  BorderBrush="Black"
+                                  Height="150"
+                                  Margin="0,10">
+                                <DataGrid.Columns>
+                                        <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                                        <DataGridTextColumn Header="Название_группы" Binding="{Binding namegroup}"/>
+                                        <DataGridTextColumn Header="Курс" Binding="{Binding course}"/>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center">
+                                <TextBox x:Name="IdBox" Width="30" Height="1"/>
+                                 <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="NamegroupBox" Width="80" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="CourseBox" Width="80" Height="1"/>
+                        </StackPanel>
+                        <StackPanel  Orientation = "Horizontal"  >
+                                <TextBlock TextAlignment="Center">ㅤㅤㅤIDㅤ </TextBlock>
+                                <TextBlock TextAlignment="Center">Название_группы</TextBlock>
+                                <TextBlock TextAlignment="Center">Курс</TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" >
+                        <Button x:Name="AddButton" HorizontalAlignment="Center"  Content="ДобавитьЗапись" Click="AddButton_OnClick"/>
+                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                        <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить Запись" Click="DelButton_OnClick"/>
+                        </StackPanel>    
+                </StackPanel>
+        </Grid>
+</Window>
