@@ -17,7 +17,7 @@ public partial class CourseAndGroup : Window
     public CourseAndGroup()
     {
         Width = 850;
-        Height = 350;
+        Height = 400;
         InitializeComponent();
         Groups = new ObservableCollection<GroupYp>();
         Courses = new ObservableCollection<CourseYp>();
@@ -81,7 +81,6 @@ private void ShowTable()
                             group = reader.GetInt32("Группа"),
                             ras =reader.GetInt32("Расписание")
                         });
-
                     }
                 }
             }
@@ -89,7 +88,7 @@ private void ShowTable()
         }
         GropDataGrid.ItemsSource = Groups;
     }
-    private void ShowTable2()
+private void ShowTable2()
     {
         using (var connection = new MySqlConnection(_connectionSb.ConnectionString))
         {
@@ -108,7 +107,6 @@ private void ShowTable()
                             lang = reader.GetInt32("Язык"),
                             stage = reader.GetInt32("Этап"),
                         });
-
                     }
                 }
             }
@@ -116,10 +114,23 @@ private void ShowTable()
         }
         coursegDataGrid.ItemsSource = Courses;
     }
-
     private void DelButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        if (CheckBox.IsChecked == true)
+        {
+            var remove = GropDataGrid.SelectedItem as GroupYp;
+            string del = DELBox.Text;
+            using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+            { using (var cmd = cnn.CreateCommand())
+                { cmd.CommandText = "DELETE FROM управление_группами where ID = "+ del;
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();}
+                Groups.Remove(remove);
+                cnn.Close();}
+            GropDataGrid.DataContext = Groups; 
+        }
+        else
+        { this.Close();}
     }
 
     private void AdAdd2Button_OnClick(object? sender, RoutedEventArgs e)
@@ -156,14 +167,26 @@ private void ShowTable()
 
     private void Del2Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        if (Check2Box.IsChecked == true)
+        {
+            var remove = coursegDataGrid.SelectedItem as CourseYp;
+            string dele = DEL2Box.Text;
+            using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+            { using (var cmd = cnn.CreateCommand())
+                { cmd.CommandText = "DELETE FROM управление_курсами where ID = "+ dele;
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();}
+                Courses.Remove(remove);
+                cnn.Close();}
+            coursegDataGrid.DataContext = Courses; 
+        }
+        else
+        { this.Close();}
     }
-
     private void Расписание_OnClick(object? sender, RoutedEventArgs e)
     {
         new modul.Schedule().Show();
     }
-
     private void GroopButton_OnClick(object? sender, RoutedEventArgs e)
     {
         new modul.Groupsel().Show();

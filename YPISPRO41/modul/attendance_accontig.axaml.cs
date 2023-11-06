@@ -15,8 +15,8 @@ public partial class attendance_accontig : Window
    
     public attendance_accontig()
     {
-        Width = 500;
-        Height = 300;
+        Width = 450;
+        Height = 400;
         InitializeComponent();
         Attendances = new ObservableCollection<Attendance>();
         _connectionSb = new MySqlConnectionStringBuilder()
@@ -89,6 +89,21 @@ public partial class attendance_accontig : Window
     }
     private void DelButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        if (CheckBox.IsChecked == true)
+        {
+        var remove = AttendanceAaccontigDataGrid.SelectedItem as Attendance;
+        string del = DELBox.Text;
+        using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+        { using (var cmd = cnn.CreateCommand())
+            { cmd.CommandText = "DELETE FROM учет_посещаемости where ID = "+ del;
+                cnn.Open();
+                cmd.ExecuteNonQuery();}
+            Attendances.Remove(remove);
+            cnn.Close();}
+        AttendanceAaccontigDataGrid.DataContext = Attendances; 
     }
+    else
+    {this.Close();}
+    }
+
 }

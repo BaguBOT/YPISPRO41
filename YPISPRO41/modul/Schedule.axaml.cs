@@ -15,7 +15,7 @@ public partial class Schedule : Window
     public Schedule()
     {
         Width = 400;
-        Height = 300;
+        Height = 350;
         InitializeComponent();
         Schedules = new ObservableCollection<YPISPRO41.Schedule>();
         _connectionSb = new MySqlConnectionStringBuilder()
@@ -28,8 +28,22 @@ public partial class Schedule : Window
         ShowTable();
     }
     private void DelButton_OnClick(object? sender, RoutedEventArgs e)
-    {
-        throw new System.NotImplementedException();
+    { 
+        if (CheckBox.IsChecked == true)
+        {
+            var remove = ScheduleDataGrid.SelectedItem as YPISPRO41.Schedule;
+            string del = DELBox.Text;
+            using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+            { using (var cmd = cnn.CreateCommand())
+                { cmd.CommandText = "DELETE FROM расписание where ID = "+ del;
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();}
+                Schedules.Remove(remove);
+                cnn.Close();}
+            ScheduleDataGrid.DataContext = Schedules; 
+        }
+        else
+        { this.Close();}
     }
     private void AddButton_OnClick(object? sender, RoutedEventArgs e)
     {

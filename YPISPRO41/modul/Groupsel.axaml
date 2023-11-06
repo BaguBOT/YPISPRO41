@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="350"
         x:Class="YPISPRO41.modul.Groupsel"
         Title="Groupsel">
    <Grid Background="LightGreen">
@@ -22,25 +22,38 @@
                                         <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
                                         <DataGridTextColumn Header="Название_группы" Binding="{Binding namegroup}"/>
                                         <DataGridTextColumn Header="Курс" Binding="{Binding course}"/>
+                                        <DataGridTextColumn Header="Количество" Binding="{Binding value}"/>
                                 </DataGrid.Columns>
                         </DataGrid>
                         <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center">
                                 <TextBox x:Name="IdBox" Width="30" Height="1"/>
                                  <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                                <TextBox x:Name="NamegroupBox" Width="80" Height="1"/>
+                                <TextBox x:Name="NamegroupBox" Width="100" Height="1"/>
                                 <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                                <TextBox x:Name="CourseBox" Width="80" Height="1"/>
+                                <TextBox x:Name="CourseBox" Width="50" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="ValueBox" Width="50" Height="1"/>
                         </StackPanel>
                         <StackPanel  Orientation = "Horizontal"  >
-                                <TextBlock TextAlignment="Center">ㅤㅤㅤIDㅤ </TextBlock>
-                                <TextBlock TextAlignment="Center">Название_группы</TextBlock>
-                                <TextBlock TextAlignment="Center">Курс</TextBlock>
+                                <TextBlock TextAlignment="Center">ㅤㅤㅤㅤID </TextBlock>
+                                <TextBlock TextAlignment="Center">ㅤㅤНазвание_группы</TextBlock>
+                                <TextBlock TextAlignment="Center">ㅤКурсㅤㅤ</TextBlock>
+                                <TextBlock TextAlignment="Center"> Количество</TextBlock>
                         </StackPanel>
+                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
                         <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" >
-                        <Button x:Name="AddButton" HorizontalAlignment="Center"  Content="ДобавитьЗапись" Click="AddButton_OnClick"/>
-                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                        <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить Запись" Click="DelButton_OnClick"/>
+                                <Button x:Name="AddButton" HorizontalAlignment="Center"  Content="ДобавитьЗапись" Click="AddButton_OnClick"/>
+                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
                         </StackPanel>    
+                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                        <StackPanel  Orientation = "Horizontal"  HorizontalAlignment="Center" >
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="DELBox"  Width="10" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить по id запись" Click="DelButton_OnClick"/>
+                                <TextBlock TextAlignment="Center">ㅤ</TextBlock>
+                                <CheckBox x:Name="CheckBox" IsThreeState="False" IsChecked="False"  Height="20" Content="Удалить?"/> 
+                        </StackPanel> 
                 </StackPanel>
         </Grid>
 </Window>

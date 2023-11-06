@@ -16,7 +16,7 @@ public partial class Regis : Window
     public Regis()
     {
         Width = 650;
-        Height = 350;
+        Height = 400;
         InitializeComponent();
         Clients = new ObservableCollection<Client>();
         _connectionSb = new MySqlConnectionStringBuilder()
@@ -26,9 +26,10 @@ public partial class Regis : Window
             UserID = "User",
             Password = "123456"
         };
+      
         ShowTable();
+    
     }
-
     private void AddButton_OnClick(object? sender, RoutedEventArgs e)
     {
             using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
@@ -89,16 +90,21 @@ public partial class Regis : Window
 
     private void DelButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        var remove = RegisDataGrid.SelectedItem as Client;
-        using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
-        using (var cmd = cnn.CreateCommand())
+        if (CheckBox.IsChecked == true)
         {
-            cmd.CommandText = "DELETE FROM клиент where "+remove.ID;
-            cnn.Open();
-            cmd.ExecuteNonQuery();
+            var remove = RegisDataGrid.SelectedItem as Client;
+            string del = DELBox.Text;
+            using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+            { using (var cmd = cnn.CreateCommand())
+                { cmd.CommandText = "DELETE FROM клиент where ID = "+ del;
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();}
+                Clients.Remove(remove);
+                cnn.Close();}
+            RegisDataGrid.DataContext = Clients; 
         }
-        Clients.Remove(remove);
-        RegisDataGrid.DataContext = Clients;
+        else
+        { this.Close();}
     }
 
     private void Schedule_OnClick(object? sender, RoutedEventArgs e)

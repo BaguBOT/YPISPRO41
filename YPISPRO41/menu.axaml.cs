@@ -1,45 +1,22 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-
 namespace YPISPRO41;
-
-public partial class menu : Window
+public partial class Menu : Window
 {
-    public menu()
+    public Menu()
     {
         Width = 200;
-        Height = 200;
+        Height = 250;
         InitializeComponent();
     }
-    
-
     private void FinancialAccounting_OnClick(object? sender, RoutedEventArgs e)
-    {
-       new Financial_Accounting().Show();
-    }
-
+    { new Financial_Accounting().Show(); }
     private void AttendanceAccontig_OnClick(object? sender, RoutedEventArgs e)
-    {
-       new attendance_accontig().Show();
-    }
-
+    { new attendance_accontig().Show(); }
     private void Regis_OnClick(object? sender, RoutedEventArgs e)
-    {
-        new Regis().Show();
-    }
-
-  
-
+    { new Regis().Show(); }
     private void CourseManagement_OnClick_OnClick(object? sender, RoutedEventArgs e)
-    {
-        new CourseAndGroup().Show();
-    }
-    
-
+    { new CourseAndGroup().Show(); }
     private void Report_OnClick(object? sender, RoutedEventArgs e)
-    {
-        new Report().Show();
-    }
+    { new Report().Show(); }
 }

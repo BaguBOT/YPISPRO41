@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="350"
+        mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="400"
         x:Class="YPISPRO41.Regis"
         Title="Regis">
         
@@ -41,13 +41,22 @@
                                 <TextBlock TextAlignment="Center">ㅤㅤㅤㅤДата Рожденияㅤ</TextBlock>
                                 <TextBlock TextAlignment="Center">ㅤКонтактные данныеㅤ</TextBlock>
                         </StackPanel>
+                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
                         <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" >
-                        <Button x:Name="AddButton" HorizontalAlignment="Center"  Content="Добавить запись" Click="AddButton_OnClick"/>
+                                <Button x:Name="AddButton" HorizontalAlignment="Center"  Content="Добавить запись" Click="AddButton_OnClick"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <Button x:Name="Schedule" HorizontalAlignment="Center" Content="Опыт прошлых языков" Click="Schedule_OnClick"/>
+                        </StackPanel>  
                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                        <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить запись" Click="DelButton_OnClick"/>
-                        <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                        <Button x:Name="Schedule" HorizontalAlignment="Center" Content="Опыт прошлых языков" Click="Schedule_OnClick"/>
-                        </StackPanel>    
+                        <StackPanel  Orientation = "Horizontal"  HorizontalAlignment="Center" >
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="DELBox"  Width="10" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить по id запись" Click="DelButton_OnClick"/>
+                               <TextBlock TextAlignment="Center">ㅤ</TextBlock>
+                                <CheckBox x:Name="CheckBox" IsThreeState="False" IsChecked="False"  Height="20" Content="Удалить?"/> 
+                        </StackPanel> 
                 </StackPanel>
                 
         </Grid>

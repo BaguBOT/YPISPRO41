@@ -2,12 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="350"
+        mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="400"
         x:Class="YPISPRO41.CourseAndGroup"
         Title="CourseAndGroup">
         <Grid Background="LightGreen">
-               
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="Gainsboro">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Background="Gainsboro">
                         <DataGrid x:Name="GropDataGrid"
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
                                   AutoGenerateColumns="False"
@@ -27,11 +26,11 @@
                         </DataGrid>
                  <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
                          <StackPanel  Orientation = "Horizontal" >   
-                        <TextBox x:Name="IDGBox" Width="50" Height="1"/>
+                                <TextBox x:Name="IDGBox" Width="50" Height="1"/>
                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                             <TextBox x:Name="studentBox" Width="80" Height="1"/>
+                                <TextBox x:Name="studentBox" Width="80" Height="1"/>
                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                               <TextBox x:Name="groupBox" Width="80" Height="1"/>
+                                <TextBox x:Name="groupBox" Width="80" Height="1"/>
                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
                                 <TextBox x:Name="ScheduleBox" Width="100" Height="1"/>
                  </StackPanel>
@@ -41,17 +40,24 @@
                          <TextBlock TextAlignment="Center">ㅤГруппаㅤ</TextBlock>
                          <TextBlock TextAlignment="Center">ㅤㅤРасписание</TextBlock>
                          </StackPanel>
+                         <TextBlock TextAlignment="Center">ㅤ</TextBlock>
                          <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" >
                                 <Button x:Name="addGButton" HorizontalAlignment="Center" Content="ДобавитьЗапись" Click="AdAddButton_OnClick"/>
                                 <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                                <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить Запись" Click="DelButton_OnClick"/>
-                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
                                 <Button x:Name="Расписание" HorizontalAlignment="Center" Content="Расписание" Click="Расписание_OnClick"/> 
                          </StackPanel>
+                         <TextBlock TextAlignment="Center">ㅤ</TextBlock>
+                         <StackPanel  Orientation = "Horizontal"  HorizontalAlignment="Center" >
+                                 <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                 <TextBox x:Name="DELBox"  Width="10" Height="1"/>
+                                 <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                 <Button x:Name="DelButton" HorizontalAlignment="Center" Content="Удалить по id запись" Click="DelButton_OnClick"/>
+                                 <TextBlock TextAlignment="Center">ㅤ</TextBlock>
+                                 <CheckBox x:Name="CheckBox" IsThreeState="False" IsChecked="False"  Height="20" Content="Удалить?"/> 
+                         </StackPanel> 
                  </StackPanel>
                 </StackPanel>
-        
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Background="Gainsboro">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Background="Gainsboro">
                 <DataGrid x:Name="coursegDataGrid"
                           HorizontalAlignment="Center" VerticalAlignment="Center"
                           AutoGenerateColumns="False"
@@ -87,15 +93,22 @@
                                 <TextBlock TextAlignment="Center">ㅤЯзыкㅤ</TextBlock>
                                 <TextBlock TextAlignment="Center">ㅤㅤㅤЭтап</TextBlock>
                         </StackPanel>
+                        <TextBlock TextAlignment="Center">ㅤ</TextBlock>
                         <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center" >
                         <Button x:Name="Add2Button" HorizontalAlignment="Center" Content="ДобавитьЗапись" Click="AdAdd2Button_OnClick"/>
                         <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
-                        <Button x:Name="Del2Button" HorizontalAlignment="Center" Content="Удалить Запись" Click="Del2Button_OnClick"/>
-                        <TextBlock TextAlignment="Center">ㅤ</TextBlock>
                         <Button x:Name="GroopButton" HorizontalAlignment="Center" Content="Группа" Click="GroopButton_OnClick"/>
                         </StackPanel>
+                        <TextBlock TextAlignment="Center">ㅤ</TextBlock>
+                        <StackPanel  Orientation = "Horizontal"  HorizontalAlignment="Center" >
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <TextBox x:Name="DEL2Box"  Width="10" Height="1"/>
+                                <TextBlock TextAlignment="Center"> ㅤ</TextBlock>
+                                <Button x:Name="Del2Button" HorizontalAlignment="Center" Content="Удалить по id запись" Click="Del2Button_OnClick"/>
+                                <TextBlock TextAlignment="Center">ㅤ</TextBlock>
+                                <CheckBox x:Name="Check2Box" IsThreeState="False" IsChecked="False"  Height="20" Content="Удалить?"/> 
+                        </StackPanel> 
                 </StackPanel>
         </StackPanel>
-        
         </Grid>
 </Window>

@@ -15,7 +15,7 @@ public partial class Past_experience : Window
     public Past_experience()
     {
         Width = 400;
-        Height = 300;
+        Height = 350;
         InitializeComponent();
         PassExpriences = new ObservableCollection<Past_exprience>();
         _connectionSb = new MySqlConnectionStringBuilder()
@@ -62,7 +62,21 @@ public partial class Past_experience : Window
 
     private void DelButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        if (CheckBox.IsChecked == true)
+        {
+            var remove = PastExperienceDataGrid.SelectedItem as YPISPRO41.Past_exprience;
+            string del = DELBox.Text;
+            using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+            { using (var cmd = cnn.CreateCommand())
+                { cmd.CommandText = "DELETE FROM опыт_прошлых_языков where ID = "+ del;
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();}
+                PassExpriences.Remove(remove);
+                cnn.Close();}
+            PastExperienceDataGrid.DataContext = PassExpriences; 
+        }
+        else
+        { this.Close();}
     }
     private void ShowTable()
     {

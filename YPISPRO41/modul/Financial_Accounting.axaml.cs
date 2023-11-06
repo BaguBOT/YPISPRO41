@@ -16,7 +16,7 @@ public partial class Financial_Accounting : Window
     public Financial_Accounting()
     {
         Width = 600;
-        Height = 350;
+        Height = 400;
         InitializeComponent();
         Financials = new ObservableCollection<Financial>();
         _connectionSb = new MySqlConnectionStringBuilder()
@@ -98,6 +98,20 @@ public partial class Financial_Accounting : Window
 
     private void DelButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        if (CheckBox.IsChecked == true)
+        {
+            var remove = FinancialAccountingDataGrid.SelectedItem as Financial;
+            string del = DELBox.Text;
+            using (var cnn = new MySqlConnection(_connectionSb.ConnectionString))
+            { using (var cmd = cnn.CreateCommand())
+                { cmd.CommandText = "DELETE FROM финансовый_учет where ID = "+ del;
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();}
+                Financials.Remove(remove);
+                cnn.Close();}
+            FinancialAccountingDataGrid.DataContext = Financials; 
+        }
+        else
+        { this.Close();}
     }
 }

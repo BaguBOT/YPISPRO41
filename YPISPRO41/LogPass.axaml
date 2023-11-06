@@ -2,8 +2,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="150"
-        x:Class="YPISPRO41.MainWindow"
+        mc:Ignorable="d" d:DesignWidth="130" d:DesignHeight="180"
+        x:Class="YPISPRO41.LogPass"
         Title="YPISPRO41"
         Background="LightGreen">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro" >
@@ -12,6 +12,7 @@
     <TextBlock TextAlignment="Center">Пароль</TextBlock>
     <TextBox x:Name="Password" Width="100" Height="1"/>
     <TextBlock></TextBlock>
-    <Button x:Name="LoginbuutButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти" Click="login_OnClick"/>
+    <Button x:Name="LoginbuutButton" HorizontalAlignment="Center" VerticalAlignment="Center" 
+            Content="Войти" Click="login_OnClick"/>
     </StackPanel>
 </Window>

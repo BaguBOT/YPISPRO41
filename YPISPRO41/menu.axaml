@@ -2,16 +2,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="200"
-        x:Class="YPISPRO41.menu"
+        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="250"
+        x:Class="YPISPRO41.Menu"
         Title="menu"
         Background="LightGreen">
-    
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro" >
-    <Button x:Name="CourseManagement"  HorizontalAlignment="Center" Content="Управление курсами  " Click="CourseManagement_OnClick_OnClick"/>
+    <Button x:Name="CourseManagement"  HorizontalAlignment="Center" Content="Управление курсами" Click="CourseManagement_OnClick_OnClick"/>
+    <TextBlock TextAlignment="Center">ㅤ</TextBlock>
     <Button x:Name="FinancialAccounting" HorizontalAlignment="Center" Content="Финансовый учет" Click="FinancialAccounting_OnClick"/>
+    <TextBlock TextAlignment="Center">ㅤ</TextBlock>
     <Button x:Name="Attendance" HorizontalAlignment="Center" Content="Посещаемость" Click="AttendanceAccontig_OnClick"/>
+    <TextBlock TextAlignment="Center">ㅤ</TextBlock>
     <Button x:Name="Regis" HorizontalAlignment="Center" Content="Регистрация" Click="Regis_OnClick"/>
+    <TextBlock TextAlignment="Center">ㅤ</TextBlock>
     <Button x:Name="Report" HorizontalAlignment="Center" Content="Отчет" Click="Report_OnClick"/>
     </StackPanel>
 </Window>
